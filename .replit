@@ -1,0 +1,18 @@
+modules = ["nodejs-20", "web"]
+run = "npm install && npm run dev"
+
+[nix]
+channel = "stable-24_05"
+
+[workflows]
+runButton = "Run"
+
+[[workflows.workflow]]
+name = "Run"
+author = 41666785
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "pnpm install && pnpm run dev"
+
